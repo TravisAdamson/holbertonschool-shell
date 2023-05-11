@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod doug+x -r ..
+chmod oug+x . -r
