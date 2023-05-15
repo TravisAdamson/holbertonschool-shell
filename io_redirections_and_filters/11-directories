@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '\n\l\s\ \-Rd' | wc -l
+ls -dR | wc -l
