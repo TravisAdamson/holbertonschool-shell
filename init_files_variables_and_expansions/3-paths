@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$PATH" | tr -dc : | wc -c +1
+PATH="$PATH:" | echo "$PATH" | tr -dc : | wc -c 
