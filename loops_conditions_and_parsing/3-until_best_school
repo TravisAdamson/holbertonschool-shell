@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the same thing 10 Times
+x=1
+until [ $x -ge 11 ] 
+do 
+	echo "Best School"
+	x=$((x+1))       
+done
