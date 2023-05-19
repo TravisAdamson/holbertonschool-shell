@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script displays the contents of the directory in list formafter the leading dash
-x=$((ls))
-for i in {1..$x}
+x=$(ls)
+for i in $x
 do
-	echo "$i" | cut -d "-" -f2  
+	echo "$i" | rev | cut -d "-" -f1 | rev 
 done
