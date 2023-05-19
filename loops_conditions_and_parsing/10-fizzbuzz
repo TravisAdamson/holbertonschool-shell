@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script displays the same thing 10 Times
+
+for i in {1..100}
+do 
+	remainder1=$((i%5))
+	remainder2=$((i%3))
+	if [ $remainder1 = 0 ] && [ $remainder2 = 0 ]
+	then 
+		echo "FizzBuzz"
+	else
+		if [ $remainder1 = 0 ]
+		then 
+			echo "Buzz"
+		elif [ $remainder2 = 0 ]
+		then
+			echo "Fizz"
+		else
+			echo "$i"
+		fi
+	fi
+done
