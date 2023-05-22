@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Kills other loop
+pgrep 10-process_and_pid_file > touch /var/run/myscript.pid
+x=1
+trap "echo I hate the kill command; rm /var/run/myscript.pid; exit" 15
+trap "echo Y U no love me?!; rm /var/run/myscript.pid; exit" 2
+while [ $x -lt 2 ]
+do
+        echo To infinity and beyond
+        sleep 2
+done
