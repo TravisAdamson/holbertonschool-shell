@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays text in an endless loop until signal received to kill
+x=1
+trap 15 echo I am invincible!!!
+while [ $x -lt 2 ]
+do 
+	echo To infinity and beyond
+	sleep 2
+done
