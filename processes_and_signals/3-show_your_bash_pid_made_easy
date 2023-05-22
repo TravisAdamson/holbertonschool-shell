@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Displays lines including "bash"
-pgrep -e bash
+pgrep -el bash
