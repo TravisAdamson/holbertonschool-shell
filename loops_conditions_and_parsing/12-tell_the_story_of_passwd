@@ -3,6 +3,6 @@
 filepath="/etc/passwd"
 while IFS=: read -r USERNAME PASSWORD GROUP_ID USERID USERIDINFO HOME_DIRECTORY COMMAND
 do 
-	echo "The user $USERNAME is part of the :$GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND. $USERID place is protected by the passcode $PASSWORD, more info about the user here: $USERIDINFO"
+	echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND. $USERID 's place is protected by the passcode $PASSWORD, more info about the user here: $USERIDINFO"
 
 done < $filepath
