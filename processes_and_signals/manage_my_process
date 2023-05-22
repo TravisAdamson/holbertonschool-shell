@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Runs Infinitely
+x=1
+while [ $x -lt 2 ] 
+do
+	echo I am alive! > /tmp/my_process
+	sleep 2
+done
