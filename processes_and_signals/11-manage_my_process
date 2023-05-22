@@ -2,23 +2,27 @@
 # Kills other loop
 case $1 in
 	start)
-		bash manage_my_process
+		bash /holbertonschool-shell/processes_and_signals/manage_my_process
 		echo pidof manage_my_process > /var/run/my_process.pid
 		echo "manage_my_process started"
+		exit
 		;;
 	stop)
 		kill "$(pgrep -f manage_my_process)" 
 		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
+		exit
 		;;
 	restart)
 		kill "$(pgrep -f manage_my_process)"
 		rm /var/run/my_process.pid
-		bash manage_my_process
+		bash /holbertonschool-shell/processes_and_signals/manage_my_process
 		echo pidof manage_my_process > /var/run/my_process.pid
 		echo "manage_my_process restarted"
+		exit
 		;;
 	*)
 		echo "Usage: manage_my_process (start|stop|restart)"
+		exit
 		;;
 esac

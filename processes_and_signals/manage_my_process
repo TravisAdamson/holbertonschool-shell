@@ -3,6 +3,6 @@
 x=1
 while [ $x -lt 2 ] 
 do
-	echo I am alive! > /tmp/my_process
+	echo I am alive! >> /tmp/my_process
 	sleep 2
 done
