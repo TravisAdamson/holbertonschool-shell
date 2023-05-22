@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Runs Infinitely
 x=1
-sudo touch /tmp/my_process
+touch /tmp/my_process
 
 while [ $x -lt 2 ] 
 do
-	sudo bash -c "echo \"I am alive!\" >> /tmp/my_process"
+	echo "I am alive!" >> /tmp/my_process
 	sleep 2
 done

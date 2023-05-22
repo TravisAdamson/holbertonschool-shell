@@ -2,20 +2,18 @@
 # Kills other loop
 case $1 in
 	start)
-		./manage_my_process
-		echo pidof manage_my_process | sudo tee /var/run/my_process.pid > /dev/null
+		./manage_my_process &
+		echo $! >> /var/run/my_process.pid &
 		echo "manage_my_process started"
 		;;
-	stop)
-		sudo kill "$(cat "manage_my_process")" 
-		sudo rm /var/run/my_process.pid
+	stop) 
+		rm /var/run/my_process.pid &
 		echo "manage_my_process stopped"
 		;;
 	restart)
-		sudo kill "$(cat "manage_my_process")"
-		sudo rm /var/run/my_process.pid
-		./manage_my_process
-		echo pidof manage_my_process | sudo tee /var/run/my_process.pid > /dev/null
+		rm /var/run/my_process.pid &
+		./manage_my_process &
+		echo $! >> /var/run/my_process.pid &
 		echo "manage_my_process restarted"
 		;;
 	*)
