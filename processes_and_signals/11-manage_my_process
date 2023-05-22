@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Kills other loop
-pidnumber="1"
+pidnumber=/var/run/my_process.pid
 case $1 in
 	start)
 		./manage_my_process &
@@ -8,14 +8,12 @@ case $1 in
 		echo "manage_my_process started"
 		;;
 	stop) 
-		pidnumber=$(cat "/var/run/my_process.pid") &
-		kill "$pidnumber" &
+		kill "$(cat "$pidnumber")" &
 		rm /var/run/my_process.pid &
 		echo "manage_my_process stopped"
 		;;
 	restart)
-		pidnumber=$(cat "/var/run/my_process.pid") &
-		kill "$pidnumber" &
+		kill "$(cat "$pidnumber")" &
 		rm /var/run/my_process.pid &
 		./manage_my_process &
 		echo $! > /var/run/my_process.pid &
