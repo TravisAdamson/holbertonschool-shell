@@ -1,0 +1,3 @@
+#!/bin/bash
+#Encrypts text from file, and displays on screen
+tr 'A-Za-z' 'N-ZA-Mn-za-m' < "$1"
